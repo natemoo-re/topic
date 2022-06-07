@@ -5,7 +5,7 @@ export default function createDeck(opts = {}) {
 			'astro:config:setup': async ({ injectRoute }) => {
 				injectRoute({
                     pattern: '/[...slug]',
-                    entryPoint: 'topic.dev/pages/slides'
+                    entryPoint: 'topic-dev/pages/slides'
                 })
 				return
 			},
