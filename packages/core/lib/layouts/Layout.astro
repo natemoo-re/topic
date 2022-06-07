@@ -1,0 +1,24 @@
+---
+import Slides from './Slides.astro';
+import Presenter from './Presenter.astro';
+import '../styles/main.css';
+const { slug } = Astro.params;
+const parts = `${slug}`.split('/');
+const isPresenter = parts.at(0) === 'presenter';
+const index = Number.parseInt(parts.at(-1));
+
+const Wrapper = isPresenter ? Presenter : Slides;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<script src="../scripts/client.ts"></script>
+	</head>
+	<body>
+        <Wrapper index={index}>
+            <slot />
+        </Wrapper>
+	</body>
+</html>

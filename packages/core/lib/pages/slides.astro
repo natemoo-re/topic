@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+const config = await import('/slides/config.json').then(res => res.default);
+const keys = Object.keys(config);
+const { slug } = Astro.params;
+const parts = `${slug}`.split('/');
+const index = Number.parseInt(parts.at(-1));
+if (Number.isNaN(index)) {
+	return Astro.redirect('/1');
+}
+if (index <= 0) {
+	return Astro.redirect('/1');
+}
+if (index > keys.length) {
+	return Astro.redirect(`/${keys.length}`);
+}
+const slideName = keys[index - 1];
+const slides = import.meta.glob('/slides/**/*.astro');
+const filePath = Object.keys(slides).find((key) => key.endsWith(slideName))
+const Slide = await slides[filePath]().then(({ default: s }) => s);
+---
+
+<Layout>
+	<Slide />
+</Layout>

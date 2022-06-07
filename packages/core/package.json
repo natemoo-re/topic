@@ -1,0 +1,22 @@
+{
+  "name": "topic-dev",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./pages/slides": "./lib/pages/slides.astro"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "peerDependencies": {
+    "astro": "1.0.0-beta.40"
+  },
+  "dependencies": {
+    "astro": "^1.0.0-beta.38",
+    "micromorph": "^0.2.2"
+  }
+}

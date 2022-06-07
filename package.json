@@ -1,0 +1,7 @@
+{
+    "name": "@topic/root",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm --filter playground run dev"
+    }
+}
