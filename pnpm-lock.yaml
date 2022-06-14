@@ -19,7 +19,7 @@ importers:
   packages/playground:
     specifiers:
       '@astrojs/node': ^0.1.1
-      '@topic.dev/core': ^0.0.2
+      '@topic.dev/core': ^0.0.3
       astro: ^1.0.0-beta.46
     dependencies:
       '@astrojs/node': 0.1.1
