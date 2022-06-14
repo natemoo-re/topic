@@ -4,5 +4,8 @@
     "packageManager": "pnpm@7.0.1",
     "scripts": {
         "dev": "pnpm --filter playground run dev"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.23.0"
     }
 }
